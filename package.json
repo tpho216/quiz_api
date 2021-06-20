@@ -6,7 +6,8 @@
   "scripts": {
     "serve": "nodemon src/index.ts",
     "start": "node src/index.js",
-    "postinstall": "tsc",
+    "tsc" : "tsc",
+    "postinstall": "npm run tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
