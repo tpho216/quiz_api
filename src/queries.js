@@ -1,9 +1,13 @@
 const Pool = require('pg').Pool;
+console.log("DB USER: " + process.env.DATABASE_USER);
+console.log("DB HOST: " + process.env.DATABASE_HOST);
+console.log("DB NAME: " + process.env.DATABASE_NAME);
+console.log("DB PW: " + process.env.DATABASE_PW);
 const pool = new Pool({
-    user: 'quiz_master',
-    host: 'localhost',
-    database: 'api',
-    password: 'quiz144',
+    user: process.env.DATABASE_USER,
+    host: process.env.DATABASE_HOST,
+    database: process.env.DATABASE_NAME,
+    password: process.env.DATABASE_PW,
     port: 5432,
 });
 const getModelAnswers = (request, response) => {
