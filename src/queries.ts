@@ -1,10 +1,5 @@
 const Pool = require('pg').Pool;
 
-console.log("DB USER: " + process.env.DATABASE_USER);
-console.log("DB HOST: " + process.env.DATABASE_HOST);
-console.log("DB NAME: " + process.env.DATABASE_NAME);
-console.log("DB PW: " + process.env.DATABASE_PW);
-
 const pool = new Pool({
     user: process.env.DATABASE_USER,
     host:  process.env.DATABASE_HOST,
@@ -20,6 +15,7 @@ const getModelAnswers = (
 ) => {
     pool.query("SELECT * FROM modelanswer ORDER BY id ASC", (error: any, results: { rows: any; }) => {
         if (error) {
+            console.log("ERROR: " + error);
             throw error;
         }
         response.status(200).json(results.rows);
@@ -32,6 +28,7 @@ const getQuestions = (
 ) => {
     pool.query("SELECT * FROM quizquestion ORDER BY id ASC", (error: any, results: { rows: any; }) => {
         if (error) {
+            console.log("ERROR: " + error);
             throw error;
         }
         response.status(200).json(results.rows);

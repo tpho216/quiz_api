@@ -7,6 +7,7 @@
     "serve": "nodemon src/index.ts",
     "start": "node src/index.js",
     "build": "tsc",
+    "deploy:git" : "git add . && git commit -m 'changes' && git push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
