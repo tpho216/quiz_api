@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "nodemon src/index.ts",
-    "start": "node src/index.js",
-    "postinstall": "tsc",
+    "start": "node src/index.js",git
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
