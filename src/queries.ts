@@ -22,7 +22,7 @@ const getModelAnswers = (
     request: { params: { id: string } },
     response: { status: (arg0: number) => { (): any; new (): any; json: { (arg0: any): void; new (): any } } },
 ) => {
-    client.query("SELECT * FROM modelanswer ORDER BY id ASC", (error: any, results: { rows: any; }) => {
+    client.query("SELECT * FROM modelanswer", (error: any, results: { rows: any; }) => {
         if (error) {
             console.log("ERROR: " + error);
             throw error;
@@ -35,7 +35,7 @@ const getQuestions = (
     request: { params: { id: string } },
     response: { status: (arg0: number) => { (): any; new (): any; json: { (arg0: any): void; new (): any } } },
 ) => {
-    client.query("SELECT * FROM quizquestion ORDER BY id ASC", (error: any, results: { rows: any; }) => {
+    client.query("SELECT * FROM quizquestion", (error: any, results: { rows: any; }) => {
         if (error) {
             console.log("ERROR: " + error);
             throw error;
